@@ -1,0 +1,10 @@
+<h1><%= @list.name %></h1>
+
+<%@list.movies.each do |movie|  %>
+  <%= movie.title %>
+  <%= image_tag movie.poster_url, alt: "Le Wagon", width: 200 %>
+  <% end %>
+
+<%= link_to "Add a film to bookmark", new_list_bookmark_path(@list) %>
+<%= link_to "Go back to the list's list", root_path %>
+<%= link_to "delete", bookmark_path, data: { turbo_method: :delete, turbo_confirm: "Are you sure you "}%>
