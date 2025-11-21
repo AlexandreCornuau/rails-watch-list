@@ -19,13 +19,14 @@ class BookmarksController < ApplicationController
       @review = Review.new
       render :new, status: :unprocessable_entity
     end
-
-    def destroy
-      @bookmark = Bookmark.find(params[:id])
-      @bookmark.destroy
-      redirect_to list_path(@bookmark.list), status: :see_other
-    end
   end
+  def destroy
+
+    @bookmark = Bookmark.find(params[:id])
+    @bookmark.destroy
+    redirect_to list_path(@bookmark.list), status: :see_other
+  end
+
   private
 
   def bookmark_params
