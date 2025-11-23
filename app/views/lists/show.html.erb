@@ -1,4 +1,4 @@
-<div class="navbar-lewagon mb-5 p-3">
+<div class="navbar-lewon mb-5 p-3" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cl_image_path @list.photo.key, height: 300, width: 400, crop: :fill %>)">
   <h1><%= @list.name %></h1>
 </div>
 <div class="container">
@@ -14,7 +14,7 @@
   <div class=bookmark-infos>
       <%= movie.title %>
       <% bookmark = Bookmark.find_by(list: @list , movie: movie) %>
-      <%= link_to "delete", bookmark_path(bookmark), data: { turbo_method: :delete, turbo_confirm: "Are you sure you "}%>
+      <%= link_to "delete", bookmark_path(bookmark), data: { turbo_method: :delete, turbo_confirm: "Are you sure you "}, class: "btn btn-danger rounded-pill"%>
   </div>
 
 </div>
@@ -26,6 +26,6 @@
 </div>
 
 <div class="footer">
-<%= link_to "Add a film to bookmark", new_list_bookmark_path(@list), class:"btn btn-primary rounded" %>
-<%= link_to "Go back to the list's list", root_path , class:"btn btn-warning rounded"%>
+<%= link_to "Add a film to bookmark", new_list_bookmark_path(@list), class:"btn btn-primary rounded-3" %>
+<%= link_to "Go back to the list's list", root_path , class:"btn btn-warning rounded-3"%>
 </div>
